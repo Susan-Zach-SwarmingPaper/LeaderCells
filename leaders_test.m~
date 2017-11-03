@@ -8,7 +8,7 @@
 clear all
 close all
 clc
-itnum = [5:5:60];
+itnum = [10:10:60];
 %itnum = [20];
 
 load('vel-EGF(E6)w54.mat');
@@ -80,8 +80,7 @@ followerXpos= NaN;
 followerYpos= NaN;
 brushedDataF= NaN;
 countert = countert + 1;
-macrodataF = NaN;
-%macrodataF = [brushedDataF' followerXpos followerYpos];
+macrodataF = [brushedDataF' followerXpos followerYpos];
 datastoreF{1,counterx} = macrodataF;
 datastoreZ{countert,1}=macrodataF;
     % if isempty(brushedDataL);
@@ -134,6 +133,7 @@ brush green
 hold off
 
 pause
+
 brushedDataF = find(get(F,'BrushData'));
 
 followerXpos=storeXh(brushedDataF,i);
@@ -144,7 +144,6 @@ datastoreZ{countert,1}=macrodataF;
 countert = countert + 1;
 
 brush off
-
 end
 end
 datastoreL{2,counter} = datastoreZ;
